@@ -1,6 +1,5 @@
 
-
-//import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 
 public class Tablero {
 	
@@ -28,7 +27,8 @@ public class Tablero {
 			}
 		}
 	}
-		
+	**/
+	
 	
 	public void insertarCasilla(int pLongitud, int pAltura, Casilla unaCasilla){		
 		tablaCasillas[pLongitud][pAltura] = unaCasilla;
@@ -57,7 +57,7 @@ public class Tablero {
 
 	}
 
-	**/
+	
 	
 
 

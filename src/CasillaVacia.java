@@ -2,7 +2,7 @@
 
 public class CasillaVacia extends Casilla {
 	
-	//Atributos
+	//Sería más eficiente incluir este tipo de casilla en la propia CasillaNumero, para evitar redundancias (Consejo de Andoni), retocar en un futuro
 	
 	
 	//Constructor
