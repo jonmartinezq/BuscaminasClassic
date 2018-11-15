@@ -12,6 +12,7 @@ public class Buscaminas {
 	private String usuarioActual;
 	private int dificultadActual;
 	private Tablero tablero;
+	//private Puntuaciones punt;
 	
 
 

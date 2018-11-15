@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 import java.util.Observer;
 
 public class Tablero {
-	
+		//Falta dificultad
 		//Atributos
 	private Casilla[][] tablaCasillas;
 	private int x;
