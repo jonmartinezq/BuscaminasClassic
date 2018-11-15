@@ -6,10 +6,13 @@ import javax.swing.JOptionPane;
 
 public class Buscaminas {
 	//Atributos
+	
 	private static Buscaminas miBuscaminas = new Buscaminas();
 
 	private String usuarioActual;
 	private int dificultadActual;
+	private Tablero tablero;
+	
 
 
 
@@ -28,37 +31,46 @@ public class Buscaminas {
 
 	}
 
-	public void crearTablero(){
+	public void crearTablero(int pDificultad){
+		//Primero la clase Builder
 	}
 
 
-	public void abrirCasilla(){
+	public void abrirCasilla(int pX, int pY){
+		if(tablero!=null)
+		{
+			this.tablero.destapar(pX, pY);
+		}
 		
 	}
 
 	
-	public void marcarCasilla(){
-
+	public void marcarCasilla(int pX, int pY){
+		if (tablero!=null)
+			this.tablero.marcar(pX, pY);
 	}
 
 	
-	public void setUsuario(){
-
+	public void setUsuario(String u){
+		this.usuarioActual=u;
 	}
 	
 	
 	public void destaparMinas(){
-
+		tablero.destaparMinas();
 	}
 	
 	
 	public void decrementar(){
-
+		tablero.decrementar();
 	}
 	
 	
 	public void destaparVecinos(int px, int py){
-
+		tablero.destaparVecinos(px, py);
+	}
+	public void anadirObserver(Observer pObservador, int x, int y){
+		this.tablero.anadirObserver(pObservador, x, y);
 	}
 	
 	
