@@ -37,7 +37,7 @@ public class Builder {
 				y = 25;
 			}
 		}
-		
+			//Falta la dificultad como parámetro
 			Tablero tablero = new Tablero(x,y /**dificultad**/);
 			tablero = insertarVacias(tablero, x, y);	
 			tablero = insertarMinas(tablero, pDificultad, x, y);
@@ -50,17 +50,14 @@ public class Builder {
 			
 
 		private Tablero insertarNumeros(Tablero tablero, int x, int y) {
-			// TODO Auto-generated method stub
 			return null;
 			}
 	
 		private Tablero insertarMinas(Tablero tablero, int pDificultad, int x, int y) {
-			// TODO Auto-generated method stub
 			return null;
 			}
 	
 		private Tablero insertarVacias(Tablero tablero, int x, int y) {
-			// TODO Auto-generated method stub
 			return null;
 			}
 	
