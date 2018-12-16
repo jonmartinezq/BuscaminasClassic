@@ -1,11 +1,8 @@
-
 import java.awt.Color;
 
 import javax.swing.JLabel;
 
-
-public class Cronometro extends JLabel implements Runnable {
-	
+public class Cronometro extends JLabel implements Runnable{
 	private boolean terminar;
 	private int segundos;
 	private Thread hilo;
@@ -36,11 +33,9 @@ public class Cronometro extends JLabel implements Runnable {
 		return segundos;
 	}
 
-	
-	
+
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		try{
 			String tiempo = "";
 			

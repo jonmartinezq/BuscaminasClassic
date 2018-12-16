@@ -2,7 +2,7 @@
 
 public class CasillaVacia extends Casilla {
 	
-	//Sería más eficiente incluir este tipo de casilla en la propia CasillaNumero, para evitar redundancias (Consejo de Andoni), retocar en un futuro
+	//Atributos
 	
 	
 	//Constructor
@@ -18,7 +18,7 @@ public class CasillaVacia extends Casilla {
 			Buscaminas.getBuscaminas().decrementar();
 			Buscaminas.getBuscaminas().destaparVecinos(pX, pY);
 			this.setChanged();
-			
+			this.notifyObservers(0);
 			}
 		}
 		

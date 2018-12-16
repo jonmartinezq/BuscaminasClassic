@@ -16,7 +16,7 @@ public abstract class Casilla extends Observable{
 	}
 
 
-	//Métodos
+	//Metodos
 	public void destapar(int pX, int pY){}
 
 	public void mostrar(){}
@@ -29,12 +29,12 @@ public abstract class Casilla extends Observable{
 			if(marcada)
 			{
 				this.setChanged();
-				
+				this.notifyObservers(10);
 			}
 			else
 			{
 				this.setChanged();
-				
+				this.notifyObservers(11);
 			}
 		}	
 	}

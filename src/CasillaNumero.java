@@ -16,6 +16,7 @@ public class CasillaNumero extends Casilla {
 			tapada= false;
 			System.out.println("Hola, soy una Casilla numero");
 			this.setChanged();
+			this.notifyObservers(numero);
 			Buscaminas.getBuscaminas().decrementar();
 		}
 	}	

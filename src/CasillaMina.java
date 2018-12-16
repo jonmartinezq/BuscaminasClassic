@@ -1,5 +1,6 @@
 
 
+
 public class CasillaMina extends Casilla{
 	
 	//Atributos
@@ -8,7 +9,7 @@ public class CasillaMina extends Casilla{
 	public CasillaMina() {
 	}
 	
-	//Métodos
+	//Metodos
 	public void destapar(int pX, int pY){
 		if(tapada && !marcada){
 			System.out.println("Hola, soy una Casilla Mina");
@@ -23,7 +24,7 @@ public class CasillaMina extends Casilla{
 		tapada = false;
 		marcada = false;
 		this.setChanged();
-	
+		this.notifyObservers(9);
 	}
 
 }

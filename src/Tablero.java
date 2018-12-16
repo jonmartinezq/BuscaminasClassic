@@ -1,21 +1,23 @@
 
-import javax.swing.JOptionPane;
+
 import java.util.Observer;
 
+import javax.swing.JOptionPane;
+
 public class Tablero {
-		//Falta dificultad
-		//Atributos
+	
+		//atributos
 	private Casilla[][] tablaCasillas;
 	private int x;
 	private int y;
 	private int casillasSinMina;
 	
-		//Constructor
-	public Tablero(int pX,int pY){
+		//constructora
+	public Tablero(int pX,int pY, int pDificultad){
 		tablaCasillas = new Casilla[pX][pY];
 		x = pX;
 		y = pY;
-		
+		casillasSinMina = (x*y) - numMinas(pDificultad);
 	}
 	
 		//metodos
@@ -31,8 +33,6 @@ public class Tablero {
 		JOptionPane.showMessageDialog(null,"Has perdido");
 	}
 	
-	
-	
 	public void insertarCasilla(int pLongitud, int pAltura, Casilla unaCasilla){		
 		tablaCasillas[pLongitud][pAltura] = unaCasilla;
 	}
@@ -45,8 +45,8 @@ public class Tablero {
 	
 	
 	public boolean esMina(int pX, int pY){
-		if((0<=pX && pX<=x-1) && (0<=pY && pY<=x-1)){
-			if(tablaCasillas[pX][pY] instanceof CasillaMina){
+		if((0<=pX && pX<=x-1) && (0<=pY && pY<=y-1)){
+			if (tablaCasillas[pX][pY] instanceof CasillaMina){
 				return true;
 			}
 		}
@@ -54,21 +54,20 @@ public class Tablero {
 	}
 	
 	
-	public void destapar(int pX, int pY){
-
+	public void destapar(int pX , int pY){
+		
 		if((0<=pX && pX<=x-1) && (0<=pY && pY<=y-1)){
 			tablaCasillas[pX][pY].destapar(pX, pY);	
 		}
-
 	}
 	
-	public void marcar(int pX , int pY){
+public void marcar(int pX , int pY){
+		
 		if((0<=pX && pX<=x-1) && (0<=pY && pY<=y-1)){
 			tablaCasillas[pX][pY].marcar(pX, pY);	
 		}
-
 	}
-	
+
 	public void destaparVecinos(int px, int py){
 		
 		this.destapar(px+1,py);
@@ -80,6 +79,7 @@ public class Tablero {
 		this.destapar(px,py+1);
 		this.destapar(px+1,py+1);
 	}
+	
 	
 	public void decrementar(){
 		casillasSinMina--;
@@ -94,6 +94,4 @@ public class Tablero {
 		this.tablaCasillas[x][y].addObserver(pObservador);
 	}
 	
-
-
 }
