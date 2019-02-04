@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.JTable;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 public class VentanaPuntuaciones extends JFrame {
 
@@ -24,6 +25,10 @@ public class VentanaPuntuaciones extends JFrame {
 	private JTable tbPuntuaciones;
 	boolean showAll;
 	String nombre;
+	private JButton btnCerrar;
+	private JTextField txtPuntuacin;
+	private JTextField txtDuracin;
+	private JTextField txtNombre;
 
 	/**
 	 * Launch the application.
@@ -46,14 +51,14 @@ public class VentanaPuntuaciones extends JFrame {
 	 */
 	public VentanaPuntuaciones(String nombre) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 559, 448);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JPanel panel = new JPanel();
-		panel.setBounds(5, 223, 424, 27);
+		panel.setBounds(56, 371, 424, 27);
 		contentPane.add(panel);
 		panel.setLayout(null);
 
@@ -75,10 +80,37 @@ public class VentanaPuntuaciones extends JFrame {
 		});
 		btnMisPuntuaciones.setBounds(282, 0, 132, 23);
 		panel.add(btnMisPuntuaciones);
+		
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		btnCerrar.setBounds(10, 0, 132, 23);
+		panel.add(btnCerrar);
 
 		tbPuntuaciones = new JTable();
-		tbPuntuaciones.setBounds(75, 11, 279, 201);
+		tbPuntuaciones.setBounds(10, 23, 523, 340);
 		contentPane.add(tbPuntuaciones);
+		
+		txtPuntuacin = new JTextField();
+		txtPuntuacin.setText("               Puntuaci\u00F3n");
+		txtPuntuacin.setBounds(193, 0, 156, 20);
+		contentPane.add(txtPuntuacin);
+		txtPuntuacin.setColumns(10);
+		
+		txtDuracin = new JTextField();
+		txtDuracin.setText("         Duraci\u00F3n (Segundos)");
+		txtDuracin.setColumns(10);
+		txtDuracin.setBounds(377, 0, 156, 20);
+		contentPane.add(txtDuracin);
+		
+		txtNombre = new JTextField();
+		txtNombre.setText("                 Nombre");
+		txtNombre.setColumns(10);
+		txtNombre.setBounds(10, 0, 156, 20);
+		contentPane.add(txtNombre);
 		showAll = true;
 		this.nombre = nombre;
 		// cargarPuntuaciones();
