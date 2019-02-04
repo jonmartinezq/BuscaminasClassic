@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-02-04T19:29:57</date>
+  <millis>1549304997810</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>SEVERE</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Error en conexión de base de datos buscaminas.bd</message>
+  <exception>
+    <message>java.lang.ClassNotFoundException: org.sqlite.JDBC</message>
+    <frame>
+      <class>java.net.URLClassLoader</class>
+      <method>findClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.ClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>sun.misc.Launcher$AppClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.ClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName0</method>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName</method>
+    </frame>
+    <frame>
+      <class>BD</class>
+      <method>initBD</method>
+      <line>58</line>
+    </frame>
+    <frame>
+      <class>Buscaminas</class>
+      <method>terminarPartida</method>
+      <line>51</line>
+    </frame>
+    <frame>
+      <class>CasillaMina</class>
+      <method>destapar</method>
+      <line>17</line>
+    </frame>
+    <frame>
+      <class>Tablero</class>
+      <method>destapar</method>
+      <line>56</line>
+    </frame>
+    <frame>
+      <class>Buscaminas</class>
+      <method>abrirCasilla</method>
+      <line>71</line>
+    </frame>
+    <frame>
+      <class>Boton$1</class>
+      <method>mouseClicked</method>
+      <line>31</line>
+    </frame>
+    <frame>
+      <class>java.awt.AWTEventMulticaster</class>
+      <method>mouseClicked</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-02-04T19:32:56</date>
+  <millis>1549305176239</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Conectada base de datos buscaminas.bd</message>
+</record>
+<record>
+  <date>2019-02-04T19:32:56</date>
+  <millis>1549305176326</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-02-04T19:32:56</date>
+  <millis>1549305176451</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>22</thread>
+  <message>BD añadida 1 fila	INSERT INTO puntuacion (nombre,casillas, segundos) VALUES ('igor',10,4)</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-02-04T19:38:27</date>
+  <millis>1549305507006</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Conectada base de datos buscaminas.bd</message>
+</record>
+<record>
+  <date>2019-02-04T19:38:27</date>
+  <millis>1549305507020</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>16</thread>
+  <message>Creada base de datos</message>
+</record>
+<record>
+  <date>2019-02-04T19:38:27</date>
+  <millis>1549305507161</millis>
+  <sequence>2</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>22</thread>
+  <message>BD añadida 1 fila	INSERT INTO puntuacion (nombre,casillas, segundos) VALUES ('gg',9,5)</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-02-04T19:59:35</date>
+  <millis>1549306775799</millis>
+  <sequence>0</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Conectada base de datos buscaminas.bd</message>
+</record>
+<record>
+  <date>2019-02-04T19:59:35</date>
+  <millis>1549306775799</millis>
+  <sequence>1</sequence>
+  <logger>BD</logger>
+  <level>INFO</level>
+  <class>BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>BD Tabla puntuaciones registros obtenidos	SELECT * FROM puntuacion</message>
+</record>

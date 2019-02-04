@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import javax.swing.JButton;
 
@@ -36,6 +37,9 @@ public class InterfazTablero extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					// Borramos BD
+					// Connection con = BD.initBD("buscaminas.bd");
+					// BD.reiniciarBD(con);
 					String user=JOptionPane.showInputDialog(null, "", "Introduzca nombre de usuario:", JOptionPane.INFORMATION_MESSAGE);
 					Buscaminas.getBuscaminas().setUsuario(user);
 					Cronometro.getCronometro().iniciarCronometro();

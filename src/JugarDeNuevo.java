@@ -15,10 +15,10 @@ import java.awt.event.ActionEvent;
 
 public class JugarDeNuevo extends JFrame {
 	
-	public JugarDeNuevo() {
+	public JugarDeNuevo(String nombre) {
 		setTitle("¡Fin del Juego!");
 		getContentPane().setLayout(null);
-		this.setLocationRelativeTo(null);
+		this.setLocationRelativeTo(InterfazTablero.getInterfazTablero());
 
 
 		
@@ -35,7 +35,8 @@ public class JugarDeNuevo extends JFrame {
 		JButton btnNewButton_1 = new JButton("No");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
+				VentanaPuntuaciones v = new VentanaPuntuaciones(nombre);
+				v.setVisible(true);
 			}
 		});
 		btnNewButton_1.setBounds(227, 88, 99, 34);

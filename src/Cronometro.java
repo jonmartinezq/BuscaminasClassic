@@ -47,7 +47,6 @@ public class Cronometro extends JLabel implements Runnable{
 			}
 		}
 		catch(Exception e){
-			segundos = 0;
 		}
 		
 	}

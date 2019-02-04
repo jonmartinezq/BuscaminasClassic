@@ -1,97 +1,106 @@
 
-
 import java.util.Observer;
 
 import javax.swing.JOptionPane;
 
 public class Tablero {
-	
-		//atributos
+
+	// atributos
 	private Casilla[][] tablaCasillas;
 	private int x;
 	private int y;
 	private int casillasSinMina;
-	
-		//constructora
-	public Tablero(int pX,int pY, int pDificultad){
+
+	// constructora
+	public Tablero(int pX, int pY, int pDificultad) {
 		tablaCasillas = new Casilla[pX][pY];
 		x = pX;
 		y = pY;
-		casillasSinMina = (x*y) - numMinas(pDificultad);
+		casillasSinMina = (x * y) - numMinas(pDificultad);
 	}
-	
-		//metodos
-	public void destaparMinas(){
-		for (int i=0 ; i<=x-1 ; i++){
-			for (int j=0 ; j<=y-1 ; j++){
-				if(esMina(i,j)){
+
+	// metodos
+	public void destaparMinas() {
+		for (int i = 0; i <= x - 1; i++) {
+			for (int j = 0; j <= y - 1; j++) {
+				if (esMina(i, j)) {
 					tablaCasillas[i][j].mostrar();
 				}
 			}
 		}
+		// Para el cronómetro al destapar un mina
 		Cronometro.getCronometro().pararCronometro();
-		JOptionPane.showMessageDialog(null,"Has perdido");
+		JOptionPane.showMessageDialog(null, "Has perdido");
 	}
-	
-	public void insertarCasilla(int pLongitud, int pAltura, Casilla unaCasilla){		
+
+	public void insertarCasilla(int pLongitud, int pAltura, Casilla unaCasilla) {
 		tablaCasillas[pLongitud][pAltura] = unaCasilla;
 	}
-	
-	
-	
-	public int numMinas(int pNum){	
-		return (x*pNum);
+
+	public int numMinas(int pNum) {
+		return (x * pNum);
 	}
-	
-	
-	public boolean esMina(int pX, int pY){
-		if((0<=pX && pX<=x-1) && (0<=pY && pY<=y-1)){
-			if (tablaCasillas[pX][pY] instanceof CasillaMina){
+
+	public boolean esMina(int pX, int pY) {
+		if ((0 <= pX && pX <= x - 1) && (0 <= pY && pY <= y - 1)) {
+			if (tablaCasillas[pX][pY] instanceof CasillaMina) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
-	
-	public void destapar(int pX , int pY){
-		
-		if((0<=pX && pX<=x-1) && (0<=pY && pY<=y-1)){
-			tablaCasillas[pX][pY].destapar(pX, pY);	
-		}
-	}
-	
-public void marcar(int pX , int pY){
-		
-		if((0<=pX && pX<=x-1) && (0<=pY && pY<=y-1)){
-			tablaCasillas[pX][pY].marcar(pX, pY);	
+
+	public void destapar(int pX, int pY) {
+
+		if ((0 <= pX && pX <= x - 1) && (0 <= pY && pY <= y - 1)) {
+			tablaCasillas[pX][pY].destapar(pX, pY);
 		}
 	}
 
-	public void destaparVecinos(int px, int py){
-		
-		this.destapar(px+1,py);
-		this.destapar(px+1,py-1);
-		this.destapar(px,py-1);
-		this.destapar(px-1,py-1);
-		this.destapar(px-1,py);
-		this.destapar(px-1,py+1);
-		this.destapar(px,py+1);
-		this.destapar(px+1,py+1);
+	public void marcar(int pX, int pY) {
+
+		if ((0 <= pX && pX <= x - 1) && (0 <= pY && pY <= y - 1)) {
+			tablaCasillas[pX][pY].marcar(pX, pY);
+		}
 	}
-	
-	
-	public void decrementar(){
+
+	public void destaparVecinos(int px, int py) {
+
+		this.destapar(px + 1, py);
+		this.destapar(px + 1, py - 1);
+		this.destapar(px, py - 1);
+		this.destapar(px - 1, py - 1);
+		this.destapar(px - 1, py);
+		this.destapar(px - 1, py + 1);
+		this.destapar(px, py + 1);
+		this.destapar(px + 1, py + 1);
+	}
+
+	// Método que mostrará un mensaje por pantalla cuando sólo quede una casilla por
+	// abrir en el tablero
+	public void decrementar() {
 		casillasSinMina--;
-		if(casillasSinMina<=1){
+		if (casillasSinMina <= 1) {
 			int punt = Cronometro.getCronometro().pararCronometro();
-			JOptionPane.showMessageDialog(null,"Has ganado");
+			JOptionPane.showMessageDialog(null, "Has ganado");
 			Buscaminas.getBuscaminas().terminarPartida(punt);
 		}
 	}
-	
-	public void anadirObserver(Observer pObservador, int x, int y){
+
+	public void anadirObserver(Observer pObservador, int x, int y) {
 		this.tablaCasillas[x][y].addObserver(pObservador);
 	}
-	
+
+	public int getNumDestapadas() {
+		int n = 0;
+		for (int i = 0; i < x; i++) {
+			for (int j = 0; j < y; j++) {
+				if (tablaCasillas[i][j].tapada && !(tablaCasillas[i][j] instanceof CasillaMina)) {
+					n++;
+				}
+			}
+		}
+		return (x * y) - n;
+	}
+
 }

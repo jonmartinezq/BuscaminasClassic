@@ -92,7 +92,8 @@ public abstract class Puntuaciones {
 			{
 				String user = sp[i];
 				String puntuacion = sp[i+1];
-				this.lista[j]= new Puntuacion(user,Integer.parseInt(puntuacion));
+				String segundos = sp[i+2];
+				this.lista[j]= new Puntuacion(user,Integer.parseInt(puntuacion), Integer.parseInt(segundos));
 				i=i+2;
 				j = j+1;
 			}
